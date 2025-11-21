@@ -1,0 +1,13 @@
+---
+import type { GetStaticPaths } from 'astro';
+
+export const getStaticPaths = (() => {
+  const authors = [{ name: 'nohack' }, { name: 'lucid' }, { name: 'NoHack' }, { name: 'Jeon' }, { name: 'Lucid Jeon' }];
+
+  return authors.map(({ name }) => ({ params: { author: name } }));
+}) satisfies GetStaticPaths;
+
+const { author } = Astro.params;
+---
+
+<div>Author: {author}</div>

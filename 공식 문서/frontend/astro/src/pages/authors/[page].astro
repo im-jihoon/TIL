@@ -1,0 +1,23 @@
+---
+import type { GetStaticPaths } from 'astro';
+
+export const getStaticPaths = (({ paginate }) => {
+  const authors = [{ name: 'nohack' }, { name: 'lucid' }, { name: 'NoHack' }, { name: 'Jeon' }, { name: 'Lucid Jeon' }];
+
+  return paginate(authors, { pageSize: 2 });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+---
+
+<h1>Page: {page.currentPage}</h1>
+
+<ul>
+  {
+    page.data.map(({ name }) => (
+      <li>
+        <a href={`/authors/${name}`}>{name}</a>
+      </li>
+    ))
+  }
+</ul>
