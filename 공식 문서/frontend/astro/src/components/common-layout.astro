@@ -1,0 +1,26 @@
+---
+import { ClientRouter } from 'astro:transitions';
+
+type Props = {
+  title: string;
+};
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<!-- 모든 요소가 Transition 되는 것에 대해 None으로 설정 -->
+<html lang="ko" transition:animate="none">
+  <head>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+
+    <ClientRouter />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

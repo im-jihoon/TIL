@@ -1,0 +1,12 @@
+---
+import CommonLayout from '@/components/common-layout.astro';
+import Header from '@/components/header.astro';
+---
+
+<CommonLayout title="View Transition">
+  <Header />
+  <div transition:name="page" transition:animate="fade">
+    <h1>View Transition</h1>
+  </div>
+  <div>View Transition의 본문</div>
+</CommonLayout>

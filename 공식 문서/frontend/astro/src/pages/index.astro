@@ -1,18 +1,12 @@
 ---
+import CommonLayout from '@/components/common-layout.astro';
 import Header from '@/components/header.astro';
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <Header />
+<CommonLayout title="Home">
+  <Header />
+  <div transition:name="page">
     <h1>Astro</h1>
-    <a href="/post" data-astro-prefetch="viewport">Post</a>
-  </body>
-</html>
+  </div>
+  <div>Home의 본문</div>
+</CommonLayout>
