@@ -1,6 +1,7 @@
 ---
 import CommonLayout from '@/components/common-layout.astro';
 import Header from '@/components/header.astro';
+import Slot from '@/components/slot.astro';
 ---
 
 <CommonLayout title="Home">
@@ -9,4 +10,8 @@ import Header from '@/components/header.astro';
     <h1>Astro</h1>
   </div>
   <div>Home의 본문</div>
+  <Slot>
+    <div slot="slot-content">Slot Content</div>
+    <div slot="slot-header">Slot Header</div>
+  </Slot>
 </CommonLayout>
