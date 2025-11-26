@@ -9,7 +9,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.16.0"
+    "@astrojs/mdx": "^4.3.12",
+    "astro": "^5.16.0",
+    "astro-expressive-code": "^0.41.3"
   },
   "devDependencies": {
     "prettier": "3.6.2",
