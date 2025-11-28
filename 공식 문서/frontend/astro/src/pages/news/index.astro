@@ -1,0 +1,16 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getCollection } from 'astro:content';
+
+const news = await getCollection('news');
+---
+
+<ul>
+  {
+    news.map((post) => (
+      <li>
+        <a href={`/news/${post.id}`}>{post.id}</a>
+      </li>
+    ))
+  }
+</ul>

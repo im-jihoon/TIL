@@ -1,0 +1,19 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { render } from 'astro:content';
+import { getCollection } from 'astro:content';
+
+export const getStaticPaths = (async () => {
+  const news = await getCollection('news');
+
+  return news.map((newsPost) => ({
+    params: { id: newsPost.id },
+    props: { newsPost },
+  }));
+}) satisfies GetStaticPaths;
+
+const { newsPost } = Astro.props;
+const { Content } = await render(newsPost);
+---
+
+<Content />
